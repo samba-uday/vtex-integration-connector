@@ -1,0 +1,56 @@
+{
+    "memory": 256,
+    "ttl": 10,
+    "timeout": 2,
+    "minReplicas": 2,
+    "maxReplicas": 4,
+    "routes": {
+        "manifest": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/manifest",
+            "handler": "vtex.payment-gateway@1.x/providerManifest",
+            "headers": {
+                "x-provider-app": "softsuavepartnersg.payment-provider-protocol-ss@1.0.0"
+            },
+            "public": true
+        },
+        "paymentMethods": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/payment-methods",
+            "handler": "vtex.payment-gateway@1.x/providerPaymentMethods",
+            "headers": {
+                "x-provider-app": "softsuavepartnersg.payment-provider-protocol-ss@1.0.0"
+            },
+            "public": true
+        },
+        "authorize": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/payments",
+            "public": true
+        },
+        "cancel": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/payments/:paymentId/cancellations",
+            "public": true
+        },
+        "settle": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/payments/:paymentId/settlements",
+            "public": true
+        },
+        "refund": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/payments/:paymentId/refunds",
+            "public": true
+        },
+        "inbound": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/payments/:paymentId/inbound/:action",
+            "public": true
+        },
+        "paymentApp": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/paymentapp",
+            "public": true
+        },
+        "cancelPayment": {
+            "path": "/_v/softsuavepartnersg.payment-provider-protocol-ss/v1/cancelPayment",
+            "public": true
+        }
+    },
+    "runtimeArgs": [
+        "--max_old_space_size=204"
+    ]
+}

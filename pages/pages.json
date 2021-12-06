@@ -1,0 +1,7 @@
+{
+  "extensions": {
+    "checkout/transactions/payment-provider-protocol-ss": {
+      "component": "index"
+    }
+  }
+}

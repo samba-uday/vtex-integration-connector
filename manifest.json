@@ -1,0 +1,31 @@
+{
+  "name": "payment-provider-protocol-ss",
+  "vendor": "softsuavepartnersg",
+  "version": "1.0.0",
+  "title": "Payment Provider Example",
+  "description": "Reference app for Payment-Provider protocol implementers",
+  "builders": {
+    "paymentProvider": "1.x",
+    "node": "6.x",
+    "react": "2.x",
+    "pages": "0.x",
+    "messages": "0.x",
+    "docs": "0.x"
+  },
+  "policies": [
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "heimdall.vtexpayments.com.br",
+        "path": "/api/payment-provider/callback/*"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
